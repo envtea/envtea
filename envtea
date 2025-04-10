@@ -1,0 +1,16 @@
+# This file is part of Envtea, a tool written in Python for managing your
+# system and quickly switching between environments in seconds.
+#
+# Read the LICENSE file for details about licensing.
+# If this file isn't included in your source code, you may have a redistribution by someone trying to hack you!
+
+python=$(which python3)
+
+if [ -z "$python" ]; then
+    echo "envtea: environment error detected - python3 binary not found"
+    echo "envtea: giving up"
+    exit 1
+fi
+
+ENVDIR="$(cd "$(dirname "$0")" && pwd)"
+$python $ENVDIR/envtea.py
